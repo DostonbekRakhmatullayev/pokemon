@@ -1,6 +1,7 @@
 /* =====Hover cases===== */
 .item:hover {
   background-color: rgb(110, 241, 231) !important;
+  /* background-color: rgb(43, 134, 127) !important; */
 }
 
 .images:hover {
