@@ -5,6 +5,20 @@
 .images:hover {
   transform: rotate(8deg);
 }
+@media only screen and (max-width: 720px) {
+  .logo {
+    width: 407px;
+    height: 150px;
+  }
+  }
+
+@media only screen and (max-width: 490px) {
+.logo {
+  width: 203px;
+  height: 75px;
+}
+}
+
 
 @media only screen and (max-width: 567px) {
   .list {
