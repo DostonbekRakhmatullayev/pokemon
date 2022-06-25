@@ -1,0 +1,15 @@
+.item:hover {
+  background-color: rgb(110, 241, 231) !important;
+}
+
+.images:hover {
+  transform: rotate(8deg);
+}
+
+@media only screen and (max-width: 567px) {
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
