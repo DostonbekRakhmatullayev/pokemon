@@ -1,15 +1,14 @@
+
 var elSelect = document.querySelector(".js-select");
 var elList = document.querySelector(".js-list");
-
-
+let pokemonOption = []
 function ixchamlash(array, node) {
-  let type = []
+  elSelect.innerHTML = ""
   for (let i = 0; i < array.length; i++) {
-    for (let e of array[i].type) {  
-      if (!type.includes(e)) {
-        type.push(e)
-      }
+    for (let e of array[i].type) {     
+      pokemonOption.push(e)     
     }
+  
 
     // <====Element create ====>
     var newItem = document.createElement("li");
@@ -27,7 +26,6 @@ function ixchamlash(array, node) {
     newSpan.textContent = `${array[i].id}`;
     newHeading.textContent = `${array[i].name}`;
     newText.textContent = `${array[i].candy}`;
-    // newText1.textContent = `${array[i].set().candy}`;
 
     newTime.textContent = `${array[i].spawn_time}`;
     newHeight.textContent = `${array[i].height}`;
@@ -78,7 +76,6 @@ function ixchamlash(array, node) {
     newItem.appendChild(newImg);
     newItem.appendChild(newHeading);
     newItem.appendChild(newText);
-    // newItem.appendChild(newText1);
     newBox.appendChild(newHeight);
     newBox.appendChild(newWeight);
     newItem.appendChild(newBox);
@@ -86,8 +83,9 @@ function ixchamlash(array, node) {
     node.appendChild(newItem);
   }
 
+  let tywpe = new Set(pokemonOption);
 
-  for (let i of type) {
+  for (let i of tywpe) {
     var newOption = document.createElement("option");
 
     newOption.textContent = i
@@ -108,6 +106,5 @@ elSelect.addEventListener("change", function () {
       result.push(poke)
     }
   });
-
   ixchamlash([...new Set(result)], elList)
 })
