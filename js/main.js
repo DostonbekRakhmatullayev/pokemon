@@ -2,13 +2,14 @@
 var elSelect = document.querySelector(".js-select");
 var elList = document.querySelector(".js-list");
 let pokemonOption = []
-function ixchamlash(array, node) {
-  elSelect.innerHTML = ""
+
+
+function ixchamlash(array, node, data) {
+
   for (let i = 0; i < array.length; i++) {
-    for (let e of array[i].type) {     
-      pokemonOption.push(e)     
-    }
-  
+    // elSelect.value = ""
+    // elSelect.innerHTML = ""
+
 
     // <====Element create ====>
     var newItem = document.createElement("li");
@@ -81,20 +82,30 @@ function ixchamlash(array, node) {
     newItem.appendChild(newBox);
     newItem.appendChild(newTime);
     node.appendChild(newItem);
-  }
 
-  let tywpe = new Set(pokemonOption);
-
-  for (let i of tywpe) {
-    var newOption = document.createElement("option");
-
-    newOption.textContent = i
-    newOption.setAttribute("value", i)
-    elSelect.appendChild(newOption)
   }
 }
 
 ixchamlash(pokemons, elList)
+
+function getTypes(arr, element) {
+  for (let i of arr) {
+    for (let e of i.type) {
+      pokemonOption.push(e)
+    }
+  }
+  let tywpe = new Set(pokemonOption);
+  
+  for (let i of tywpe) {
+    var newOption = document.createElement("option");
+
+    newOption.textContent = i;
+    newOption.setAttribute("value", i);
+    element.appendChild(newOption);
+  }
+
+}
+getTypes(pokemons, elSelect)
 
 var result = [];
 elSelect.addEventListener("change", function () {
@@ -106,5 +117,5 @@ elSelect.addEventListener("change", function () {
       result.push(poke)
     }
   });
-  ixchamlash([...new Set(result)], elList)
+  ixchamlash([...new Set(result)], elList, pokemons)
 })
