@@ -4,13 +4,9 @@ var elList = document.querySelector(".js-list");
 let pokemonOption = []
 
 
-function ixchamlash(array, node, data) {
+function ixchamlash(array, node,) {
 
   for (let i = 0; i < array.length; i++) {
-    // elSelect.value = ""
-    // elSelect.innerHTML = ""
-
-
     // <====Element create ====>
     var newItem = document.createElement("li");
     var newBox = document.createElement("div");
@@ -105,6 +101,7 @@ function getTypes(arr, element) {
   }
 
 }
+
 getTypes(pokemons, elSelect)
 
 var result = [];
