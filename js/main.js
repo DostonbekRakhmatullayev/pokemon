@@ -1,8 +1,6 @@
-
 var elSelect = document.querySelector(".js-select");
 var elList = document.querySelector(".js-list");
 let pokemonOption = []
-
 
 function ixchamlash(array, node,) {
 
@@ -17,8 +15,6 @@ function ixchamlash(array, node,) {
     var newWeight = document.createElement("strong");
     var newTime = document.createElement("time");
     var newText = document.createElement("p");
-    // var newText1 = document.createElement("p");
-
     newImg.textContent = `${array[i].img}`;
     newSpan.textContent = `${array[i].id}`;
     newHeading.textContent = `${array[i].name}`;
@@ -27,9 +23,7 @@ function ixchamlash(array, node,) {
     newTime.textContent = `${array[i].spawn_time}`;
     newHeight.textContent = `${array[i].height}`;
     newWeight.textContent = `${array[i].weight}`;
-
     newImg.src = `${array[i].img}`
-
 
     // <===Style to give====>
     newItem.style.display = "flex";
@@ -43,22 +37,17 @@ function ixchamlash(array, node,) {
     newItem.style.backgroundColor = "rgb(37, 223, 223)";
     newItem.style.position = "relative";
     newItem.setAttribute("class", "item");
-
     newImg.style.width = "168px";
     newImg.style.height = "168px";
     newImg.style.transition = "all 0.5s ease";
-
     newBox.style.display = "flex"
     newWeight.style.marginLeft = "30px"
-
     newTime.style.padding = "7px 15px"
     newTime.style.backgroundColor = "rgb(43, 134, 127)"
     newTime.style.color = "#fff"
     newTime.style.borderRadius = "6px";
     newTime.style.marginTop = "20px"
     newTime.style.marginRight = "98px"
-
-
     newSpan.style.position = "absolute";
     newSpan.style.top = "10px";
     newSpan.style.left = "20px";
@@ -78,7 +67,6 @@ function ixchamlash(array, node,) {
     newItem.appendChild(newBox);
     newItem.appendChild(newTime);
     node.appendChild(newItem);
-
   }
 }
 
@@ -90,6 +78,7 @@ function getTypes(arr, element) {
       pokemonOption.push(e)
     }
   }
+
   let tywpe = new Set(pokemonOption);
   
   for (let i of tywpe) {
@@ -99,7 +88,6 @@ function getTypes(arr, element) {
     newOption.setAttribute("value", i);
     element.appendChild(newOption);
   }
-
 }
 
 getTypes(pokemons, elSelect)
